@@ -11,8 +11,8 @@ export default function Visuals() {
   const[color2, setColor2] = useState('');
   const[color3, setColor3] = useState('');
   const[color11, setColor11] = useState('#c70f06');
-  const[color22, setColor22] = useState('#b9b9b9');
-  const[color33, setColor33] = useState('#b9b9b9');
+  const[color22, setColor22] = useState('#b4b4b4');
+  const[color33, setColor33] = useState('#b4b4b4');
   const [anim1, setAnim1]= useState('pulse');
   const [anim2, setAnim2]= useState('none');
   const [anim3, setAnim3]= useState('none');
@@ -30,9 +30,9 @@ export default function Visuals() {
         setColor1('#fff')
         setColor11('#c70f06')
         setColor2('#000')
-        setColor22('#b9b9b9')
+        setColor22('#b4b4b4')
         setColor3('#000')
-        setColor33('#b9b9b9')
+        setColor33('#b4b4b4')
        setAnim1('pulse');
        setAnim2('none')
       setAnim3('none')
@@ -45,11 +45,11 @@ export default function Visuals() {
       }
       function page2route() {
         setColor1('#000')
-        setColor11('#b9b9b9')
+        setColor11('#b4b4b4')
         setColor2('#fff')
         setColor22('#c70f06')
         setColor3('#000')
-        setColor33('#b9b9b9')
+        setColor33('#b4b4b4')
         setAnim1('none');
         setAnim2('pulse')
        setAnim3('none')
@@ -62,9 +62,9 @@ export default function Visuals() {
       }
       function page3route() {
         setColor1('#000')
-        setColor11('#b9b9b9')
+        setColor11('#b4b4b4')
         setColor2('#000')
-        setColor22('#b9b9b9')
+        setColor22('#b4b4b4')
         setColor3('#fff')
         setColor33('#c70f06')
         setAnim1('none');
@@ -144,7 +144,10 @@ export default function Visuals() {
       </div>
 
       <div className='bg-[#fffdfd] w-full  shadow-xl'>
-        <div className='mt-[0px] pb-[20px] flex mx-auto items-center justify-center text-[#000]' style={{display:page1}}>
+      <motion.div initial={{y: +200, opacity:0}}
+        whileInView={{y:0, opacity:1}}
+        transition={{duration:1.2}}
+        viewport={{once:false}} className='mt-[0px] pb-[20px] flex mx-auto items-center justify-center text-[#000]' style={{display:page1}}>
        <div className='w-fit px-[50px] pb-[20px] shadow-xl rounded-[10px]'>
        <div>
             <div className='flex mx-auto items-center justify-center gap-x-[60px] pt-[20px]'>
@@ -504,7 +507,7 @@ export default function Visuals() {
         </div>
        </div>
    
-        </div>
+        </motion.div>
 
         <motion.div initial={{y: +200, opacity:0}}
         whileInView={{y:0, opacity:1}}
@@ -582,7 +585,10 @@ export default function Visuals() {
         <div className='flex items-center justify-start mx-auto '>
         <p className=' text-[30px] text-black'>Coming soon...</p>
         </div>
-          
+        <div className='mx-auto items-center flex justify-end mt-[100px] gap-x-4'>
+            <button className='bg-[#c70f06] text-white font-semibold text-[18px] py-2 px-6 pr-5 rounded-[10px] ' onClick={page2route}>Precedent</button>
+              <button className='bg-[#c70f06] text-white font-semibold text-[18px] py-2 px-6 pr-5 rounded-[10px] ' onClick={page1route}>Suivant</button>
+            </div>
           </div>
           
           </motion.div>
